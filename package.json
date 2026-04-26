@@ -2,12 +2,22 @@
   "name": "deep_ai",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": "commonjs",
+  "main": "main.js",
+  "homepage": "./",
+  "author": {
+    "name": "Deep Tiwari",
+    "email": "deeptiwari25@navgurukul.org"
+  },
+  "description": "Deep.AI Coder by Deep Tiwari",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && node -e \"const fs=require('fs'); fs.rmSync('build',{recursive:true,force:true}); fs.cpSync('dist','build',{recursive:true});\"",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "electron": "electron .",
+    "electron-build": "npm run build && electron-builder",
+    "dist": "npm run build && electron-builder --linux --win"
   },
   "dependencies": {
     "react": "^19.2.5",
@@ -20,6 +30,8 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
+    "electron": "^41.3.0",
+    "electron-builder": "^26.8.1",
     "eslint": "^10.2.1",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.2",
@@ -28,5 +40,32 @@
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.58.2",
     "vite": "^8.0.10"
+  },
+  "build": {
+    "appId": "com.deeptiwari.deepai",
+    "productName": "Deep.AI Coder",
+    "copyright": "Created by Deep Tiwari — Navgurukul",
+    "files": [
+      "build/**/*",
+      "main.js",
+      "splash.html",
+      "node_modules/**/*"
+    ],
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Utility",
+      "maintainer": "Deep Tiwari <deeptiwari25@navgurukul.org>"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "shortcutName": "Deep.AI Coder"
+    }
   }
 }

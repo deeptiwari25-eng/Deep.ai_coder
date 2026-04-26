@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0a0a0a;
+      color: #00ff88;
+      font-family: monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    h1 { font-size: 2rem; margin-bottom: 10px; }
+    p { font-size: 0.8rem; opacity: 0.6; margin-bottom: 30px; }
+    .loader {
+      width: 200px;
+      height: 3px;
+      background: #1a1a1a;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .loader-bar {
+      height: 100%;
+      background: #00ff88;
+      animation: load 3s ease-in-out infinite;
+    }
+    @keyframes load {
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+    .status { margin-top: 15px; font-size: 0.75rem; opacity: 0.5; }
+  </style>
+</head>
+<body>
+  <h1>>> DEEP.AI</h1>
+  <p>Created by Deep Tiwari — Navgurukul</p>
+  <div class="loader"><div class="loader-bar"></div></div>
+  <div class="status">Initializing Deep.AI Engine...</div>
+</body>
+</html>
