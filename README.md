@@ -13,7 +13,7 @@ npm install
 npm run dev
 ```
 
-## Build
+## Build and Run
 
 ```bash
 npm run build
