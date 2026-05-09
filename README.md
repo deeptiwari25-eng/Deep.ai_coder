@@ -19,4 +19,4 @@ npm run dev
 npm run build
 ```
 
-The interface includes the animated canvas backdrop, scanning line, glitch logo treatment, chat history sidebar, code block rendering, typing indicator, and prompt-style input bar.
+The interface includes the animated canvas backdrop, scanning line, glitch logo treatment, chat history sidebar, code block rendering, typing indicator, and prompt-style input bar...
